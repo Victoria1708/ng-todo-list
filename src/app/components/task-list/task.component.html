@@ -1,0 +1,29 @@
+<td (click)="toggleStatus(task)" class="todo-checkbox-col">
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" [checked]="task.status === TaskStatus.DONE">
+  </div>
+<!--  <input class="form-check-input me-1" type="checkbox" [checked]="task.status === TaskStatus.DONE" >-->
+</td>
+<td>{{task.title}}</td>
+<td class="todo-status-col" [ngSwitch]="task.status">
+  <span *ngSwitchCase="TaskStatus.NOT_STARTED" class="badge bg-secondary">not started</span>
+  <span *ngSwitchCase="TaskStatus.IN_PROGRESS" class="badge bg-primary">in progress</span>
+  <span *ngSwitchCase="TaskStatus.DONE" class="badge bg-success">done</span>
+</td>
+<td class="todo-actions-col">
+  <div class="dropdown">
+    <button class="btn btn-secondary task-actions-btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="bi bi-three-dots"></i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <li *ngIf="task.status === TaskStatus.NOT_STARTED" (click)="onStartTask(task)"><a class="dropdown-item" href="#"><i class="bi bi-skip-start-circle"></i>Start</a></li>
+      <li (click)="onDeleteTask(task)"><a class="dropdown-item" href="#"><i class="bi bi-trash-fill"></i>Remove</a></li>
+    </div>
+  </div>
+<!--  <button class="btn btn-secondary task-actions-btn" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>-->
+<!--  <ul class="dropdown-menu dropdown-menu-end">-->
+<!--    <li *ngIf="task.status === TaskStatus.NOT_STARTED" (click)="onStartTask(task)"><a class="dropdown-item" href="#"><i class="bi bi-skip-start-circle"></i>Start</a></li>-->
+<!--    <li (click)="onDeleteTask(task)"><a class="dropdown-item" href="#"><i class="bi bi-trash-fill"></i>Remove</a></li>-->
+<!--  </ul>-->
+</td>
+

@@ -1,0 +1,17 @@
+<table class="table table-hover task-list">
+  <thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col">Title</th>
+    <th scope="col">Status</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr appTask *ngFor="let task of (tasks$ | async)" [task]="task"
+      (delete)="onDeleteTask($event)"
+      (start)="onStartTask($event)"
+      (complete)="onCompleteTask($event)">
+  </tr>
+  </tbody>
+</table>

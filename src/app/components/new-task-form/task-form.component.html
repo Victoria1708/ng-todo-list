@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" name="title" (keydown.enter)="createTask()" [(ngModel)]="taskTitle">
+    <div class="input-group-append">
+      <button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="createTask()">Add new task</button>
+    </div>
+  </div>
+</div>
+
+<!--<div class="col">-->
+<!--  <div class="input-group mb-3">-->
+<!--    <input type="text" class="form-control" name="title" (keydown.enter)="createTask()" [(ngModel)]="taskTitle">-->
+<!--    <button (click)="createTask()" class="btn btn-primary">Add new task</button>-->
+<!--  </div>-->
+<!--</div>-->

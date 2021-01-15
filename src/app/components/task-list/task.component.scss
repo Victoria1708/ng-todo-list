@@ -1,0 +1,40 @@
+@import "abstracts/colors";
+
+td {
+  vertical-align: middle;
+}
+
+.todo-checkbox-col {
+  cursor: pointer;
+  width: 20px;
+
+  .form-check-input {
+    cursor: pointer;
+  }
+}
+
+.todo-status-col {
+  width: 120px;
+}
+
+.todo-actions-col {
+  width: 70px;
+  text-align: right;
+
+  .bi-three-dots {
+    cursor: pointer;
+  }
+
+  .bi {
+    margin-right: 4px;
+  }
+}
+
+.task-actions-btn {
+  margin-top: -3px;
+  padding: 1px 3px 2px 8px;
+  color: $color-base;
+  height: 20px;
+  line-height: 0;
+  background-color: $color-neutral;
+}
